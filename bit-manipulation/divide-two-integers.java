@@ -1,5 +1,9 @@
 class Solution {
     public int divide(int dividend, int divisor) {
+
+        //TC-O(log^2 N)
+        //SC-O(1)
+        
         if(dividend==Integer.MIN_VALUE && divisor==-1){
             return Integer.MAX_VALUE;
         }
