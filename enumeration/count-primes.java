@@ -5,7 +5,8 @@ class Solution {
         }
         int count=0;
         for(int i=2 ; i<=n ;i++){
-            if((i&(i-1)) == (i-1)){
+            int x = i;
+            if((x&(x-1)) == (x-1)){
                 count++;
             }
         }
