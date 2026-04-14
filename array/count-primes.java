@@ -3,14 +3,28 @@ class Solution {
         if(n==0 || n==1){
             return 0;
         }
+
+        boolean isPrime[] = new boolean[n+1];
+        Arrays.fill(isPrime,true);
+
+        isPrime[0] =false;
+        isPrime[1] = false;
+        
+        for(int i=2 ;i<n ;i++){
+            if(isPrime[i]){
+                for(int j=i*i ;j<n ;j+=i){
+                    isPrime[j] = false;
+                }
+            }
+        }
         int count=0;
-        for(int i=2 ; i<=n ;i++){
-            int x = i;
-            if((x&(x-1)) == (x-1)){
+        for(int i=2;i<n ;i++){
+            if(isPrime[i]){
                 count++;
             }
         }
 
         return count;
+        
     }
 }
