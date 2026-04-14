@@ -1,9 +1,9 @@
 class Solution {
     public int countPrimes(int n) {
-        if(n==0 || n==1){
+        if(n<2){
             return 0;
         }
-
+        
         boolean isPrime[] = new boolean[n+1];
         Arrays.fill(isPrime,true);
 
