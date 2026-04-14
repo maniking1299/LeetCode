@@ -1,5 +1,7 @@
 class Solution {
     public int countPrimes(int n) {
+        // TC->O(n log log n)
+        // SC->O(n)
         if(n<2){
             return 0;
         }
