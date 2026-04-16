@@ -32,11 +32,11 @@ class Solution {
         int MOD = 1_000_000_007;
 
         for (int i = 0; i < n; i++) {
-            long x = arr[i] * left[i] * right[i];
+            long x = (long)arr[i] * left[i] * right[i];
             sum = (sum + x) % MOD;
         }
 
-        return (int)sum;
+        return (int) sum;
     
     }
 }
