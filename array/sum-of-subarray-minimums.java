@@ -28,15 +28,15 @@ class Solution {
             stack.push(i);
         }
 
-        int sum = 0;
+        long sum = 0;
         int MOD = 1_000_000_007;
 
         for (int i = 0; i < n; i++) {
-            int x = arr[i] * left[i] * right[i];
+            long x = arr[i] * left[i] * right[i];
             sum = (sum + x) % MOD;
         }
 
-        return sum;
+        return (int)sum;
     
     }
 }
