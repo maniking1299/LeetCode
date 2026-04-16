@@ -8,7 +8,7 @@ class Solution {
 
         Stack<Integer> stack = new Stack<>();
 
-        // LEFT: strictly greater
+        // LEFT-> strictly greater
         for (int i = 0; i < n; i++) {
             while (!stack.isEmpty() && arr[stack.peek()] > arr[i]) {
                 stack.pop();
@@ -19,7 +19,7 @@ class Solution {
 
         stack.clear();
 
-        // RIGHT: greater or equal
+        // RIGHT-> greater or equal
         for (int i = n - 1; i >= 0; i--) {
             while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
                 stack.pop();
@@ -28,15 +28,15 @@ class Solution {
             stack.push(i);
         }
 
-        long sum = 0;
+        int sum = 0;
         int MOD = 1_000_000_007;
 
         for (int i = 0; i < n; i++) {
-            long contribution = (long) arr[i] * left[i] * right[i];
-            sum = (sum + contribution) % MOD;
+            int x = arr[i] * left[i] * right[i];
+            sum = (sum + x) % MOD;
         }
 
-        return (int) sum;
+        return sum;
     
     }
 }
