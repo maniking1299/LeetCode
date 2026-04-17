@@ -21,13 +21,11 @@ class Solution {
             stack.push(asteroids[i]);
             }
         }
-        if(stack.isEmpty()){
-            return new int[0];
-        }
-        int[] arr = new int[stack.size()];
+       int size = stack.size();
+        int[] arr = new int[size];
 
-        for (int i = 0; i < stack.size(); i++) {
-            arr[i] = stack.get(i); 
+        for (int i = size - 1; i >= 0; i--) {
+            arr[i] = stack.pop();
         }
 
         return arr;
