@@ -1,5 +1,7 @@
 class Solution {
     public int[] asteroidCollision(int[] asteroids) {
+        // TC->O(N)
+        // SC->O(N)
         int n = asteroids.length;
         Stack<Integer> stack = new Stack<>();
 
