@@ -13,6 +13,7 @@ class Solution {
             lb[i] = stack.isEmpty()?-1:stack.peek();
             stack.push(i);
         }
+        stack.clear();
         for(int i=h-1 ;i>=0 ;i--){
             while(!stack.isEmpty() && heights[stack.peek()] >= heights[i]){
                 stack.pop();
