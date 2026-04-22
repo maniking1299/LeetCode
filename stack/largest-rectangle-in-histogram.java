@@ -1,7 +1,30 @@
 class Solution {
     public int largestRectangleArea(int[] heights) {
+        // TC->O(N)
+        // SC->O(N)
         int h = heights.length;
-        int lb[] = new int[h];
+        Stack<Integer> stack = new Stack<>();
+        int maxArea = 0;
+
+        for(int i=0 ;i<=h;i++){
+            int currHeight = (i==h)?0:heights[i];
+            
+            while(!stack.isEmpty() && heights[stack.peek()]> currHeight){
+                int height = heights[stack.pop()];
+                int right = i;
+                int left = stack.isEmpty()?-1:stack.peek();
+
+                int width = right-left-1;
+
+                maxArea = Math.max(maxArea,height*width);
+            }
+            stack.push(i);
+        }
+        return maxArea;
+    }
+}
+        //////////////////////////////////////////
+     /*   int lb[] = new int[h];
         int rb[] = new int[h];
 
         Stack<Integer> stack = new Stack<>();
@@ -30,4 +53,4 @@ class Solution {
 
         return maxArea;
     }
-}
+}*/
