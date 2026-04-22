@@ -1,5 +1,7 @@
 class Solution {
     public int maximalRectangle(char[][] matrix) {
+        // TC->O(rows*cols)
+        // SC->O(cols)
         int currRow[] = new int[matrix[0].length];
         int maxRect = 0;
 
