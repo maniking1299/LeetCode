@@ -1,5 +1,7 @@
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
+        // TC->O(N)
+        // SC->O(N)
         Deque<Integer> q = new ArrayDeque<>();
         int[] ans = new int[nums.length-k+1];
 
