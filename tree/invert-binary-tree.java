@@ -15,6 +15,7 @@
  */
 class Solution {
     public TreeNode invertTree(TreeNode root) {
+        // Iterative sol //////////
         Queue<TreeNode> queue = new LinkedList<>();
 
         if(root == null) return root;
@@ -37,5 +38,20 @@ class Solution {
             }
     }    
         return root;
+
+    }
+/////////////////////// Recurssion /////////////////////////////////
+    public TreeNode recurrSol(TreeNode root){
+        if(root == null) return root;
+         
+            TreeNode temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+            temp =null;
+
+            recurrSol(root.left);
+            recurrSol(root.right);
+
+        return root;    
     }
 }
