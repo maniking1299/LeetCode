@@ -1,31 +1,34 @@
-class Solution {
-    public void sortColors(int[] nums) {
-        // TC->O(N)
-        // SC->O(1)
-        int s = 0,mid = 0, end = nums.length-1;
+ class Solution {
+    // TC -> O(N)
+    // SC -> O(1)
+    // Pattern -> Duch National flag
+        public void sortColors(int[] nums) {
+            int start = 0;
+            int i = 0;
+            int end = nums.length-1;
 
-        while(mid <= end){
+            while(i<=end){
+               if(nums[i] == 0){
+                   swap(nums,i,start);
+                   i++;
+                   start++;
+               }else if(nums[i] == 2){
+                   swap(nums,i,end);
+                   end--;
+               }else{
+                   i++;
+               }
 
-            if(nums[mid]==0){
-                swap(nums , s,mid);
-                s++;
-                mid++;
-            }else if(nums[mid]==1){
-                mid++;
-            }else if(nums[mid]==2){
-                swap(nums , end , mid);
-                end--;
-               
             }
-        }
 
-        
+
+        }
+        public void swap(int[] nums,int x , int y){
+            if(nums[x] == nums[y])return;
+
+            int temp = nums[x];
+            nums[x] = nums[y];
+            nums[y] = temp ;
+        }
     }
-    private static void swap(int nums[], int a , int b){
-        if(nums[a]==nums[b]) return;
-        
-        int temp = nums[a];
-        nums[a] = nums[b];
-        nums[b] = temp;
-    }
-}
+
