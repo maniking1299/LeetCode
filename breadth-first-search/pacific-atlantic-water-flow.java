@@ -17,7 +17,7 @@ class Solution {
             dfs(heights ,0,j ,Integer.MIN_VALUE , pacific);
             dfs(heights ,row-1 ,j ,Integer.MIN_VALUE , atlantic);
         }
-        for(int i=0 ;i<col ;i++){
+        for(int i=0 ;i<row ;i++){
             dfs(heights ,i,0 ,Integer.MIN_VALUE , pacific);
             dfs(heights ,i,col-1,Integer.MIN_VALUE , atlantic);
         }
