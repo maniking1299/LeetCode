@@ -3,7 +3,7 @@ class Solution {
       int i=0;
       int j=2;
 
-      int maxProduct = -1001;
+      int maxProduct = Integer.MIN_VALUE;
 
       while(j<nums.length){
         int currProduct = nums[i]*nums[i+1]*nums[j];
