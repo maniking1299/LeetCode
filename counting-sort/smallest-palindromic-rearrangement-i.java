@@ -1,6 +1,11 @@
 class Solution {
     public String smallestPalindrome(String s) {
 
+        /*   TC->O(N logN)
+             SC->O(N)
+        */
+
+        
         if (s.length() == 1) {
             return s;
         }
