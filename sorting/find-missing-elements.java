@@ -11,14 +11,14 @@ class Solution {
 
         ArrayList <Integer> ans = new ArrayList<>();
 
-        HashSet<Integer> hm = new HashSet<>();
+       int []arr = new int[max+1];
 
         for(int i: nums){
-            hm.add(i);
+            arr[i]++;
         }
 
         for(int i=min+1 ; i<max;i++){
-            if(!hm.contains(i)){
+            if(arr[i] == 0){
                 ans.add(i);
             }
         }
