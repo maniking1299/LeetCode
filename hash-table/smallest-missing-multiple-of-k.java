@@ -4,23 +4,18 @@ class Solution {
         HashSet<Integer> set = new HashSet<>();
 
         for (int i : nums) {
-            set.add(i);
-        }
-
-        int x = 1;
-        while (x < 102) {
-
-            int mul = x * k;
-
-            if (!set.contains(mul)) {
-                return mul;
+            if(i%k == 0){
+                set.add(i);
             }
-
-            x++;
-
         }
 
-        return -1;
+        for(int i=1; i<=set.size()+1 ;i++){
+            if(!set.contains(i*k)){
+                return i*k;
+            }
+        }
+
+       return -1;
 
     }
 }
