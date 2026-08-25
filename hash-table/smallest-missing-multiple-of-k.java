@@ -8,7 +8,7 @@ class Solution {
         }
 
         int x = 1;
-        while (x < 101) {
+        while (x < 102) {
 
             int mul = x * k;
 
