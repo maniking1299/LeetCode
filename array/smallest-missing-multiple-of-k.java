@@ -8,15 +8,16 @@ class Solution {
         }
 
         int x = 1;
+        while (x < 101) {
 
-        for(int i=0 ;i<nums.length ;i++){
-            int mul = x*k;
+            int mul = x * k;
 
-            if(!set.contains(mul)){
+            if (!set.contains(mul)) {
                 return mul;
             }
 
             x++;
+
         }
 
         return -1;
