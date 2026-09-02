@@ -1,32 +1,42 @@
 class Solution {
     public int sumSubarrayMins(int[] arr) {
-
-        int n = arr.length;
-        long sum = 0;
+        // TC->O(N)
+        // SC->O(N)
+         int n = arr.length;
+        int[] left = new int[n];
+        int[] right = new int[n];
 
         Stack<Integer> stack = new Stack<>();
 
-        for (int i = 0; i <= n; i++) {
-
-            while (!stack.isEmpty() &&
-                   (i == n || arr[stack.peek()] >= arr[i])) {
-
-                int mid = stack.pop();
-
-                int left = stack.isEmpty()
-                        ? mid + 1
-                        : mid - stack.peek();
-
-                int right = i - mid;
-
-                sum += (long) arr[mid] * left * right;
+        // LEFT-> strictly greater
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && arr[stack.peek()] > arr[i]) {
+                stack.pop();
             }
+            left[i] = stack.isEmpty() ? i + 1 : i - stack.peek();
+            stack.push(i);
+        }
 
-            if (i < n) {
-                stack.push(i);
+        stack.clear();
+
+        // RIGHT-> greater or equal
+        for (int i = n - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
+                stack.pop();
             }
+            right[i] = stack.isEmpty() ? n - i : stack.peek() - i;
+            stack.push(i);
+        }
+
+        long sum = 0;
+        int MOD = 1_000_000_007;
+
+        for (int i = 0; i < n; i++) {
+            long x = (long)arr[i] * left[i] * right[i];
+            sum = (sum + x) % MOD;
         }
 
         return (int) sum;
+    
     }
 }
