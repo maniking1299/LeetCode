@@ -1,5 +1,7 @@
 class Solution {
     public int majorityElement(int[] nums) {
+
+        // TC-O(N) , SC-O(1)
         
         int majEle = -1;
         int count = 0;
