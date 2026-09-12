@@ -15,6 +15,8 @@ class Solution {
         }
 
         int a=0,b=0;
+        
+ // Now checking the freq array and finding the real a,b
 
         for(int i=0 ; i<freq.length ;i++){
             if(freq[i] >1){
